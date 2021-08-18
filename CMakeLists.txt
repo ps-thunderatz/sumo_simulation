@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 catkin_package(
-  INCLUDE_DIRS plugins/include
+#  INCLUDE_DIRS plugins/include
   CATKIN_DEPENDS gazebo_plugins gazebo_ros roscpp
 )
 
