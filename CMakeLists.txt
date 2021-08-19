@@ -13,22 +13,32 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Core REQUIRED)
+find_package(gazebo REQUIRED)
+
 catkin_package(
-#  INCLUDE_DIRS plugins/include
   CATKIN_DEPENDS gazebo_plugins gazebo_ros roscpp
 )
 
 include_directories(${catkin_INCLUDE_DIRS}
                     ${Boost_INCLUDE_DIR}
                     ${GAZEBO_INCLUDE_DIRS}
+                    ${Qt5Core_INCLUDE_DIRS}
 )
+
+include_directories(plugins/include)
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
-# include_directories(plugins/include)
+add_library(control_plugin SHARED ${headers_MOC} plugins/src/control_plugin.cpp)
 
-# add_library(line_sensor_plugin SHARED plugins/src/line_sensor_plugin.cpp)
-# target_link_libraries(line_sensor_plugin CameraPlugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+target_link_libraries(control_plugin
+  ${GAZEBO_LIBRARIES}
+  ${Qt5Core_LIBRARIES}
+  ${Qt5Widgets_LIBRARIES}
+  ${PROTOBUF_LIBRARIES}
+)
 
 find_package(roslaunch)
 
