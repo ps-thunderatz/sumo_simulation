@@ -10,8 +10,8 @@
  * @copyright MIT License - Copyright (c) 2021 ThundeRatz
  */
 
-#ifndef _START_BUTTON_PLUGIN_H_
-#define _START_BUTTON_PLUGIN_H_
+#ifndef _CONTROL_PLUGIN_H_
+#define _CONTROL_PLUGIN_H_
 
 #include <gazebo/common/Plugin.hh>
 #include <gazebo/gui/GuiPlugin.hh>
@@ -33,12 +33,6 @@ class GAZEBO_VISIBLE ControlPlugin :
          *
          */
         ControlPlugin();
-
-        /**
-         * @brief Destroy the Start Control object
-         *
-         */
-        virtual ~ControlPlugin() = default;
 
         /**
          * @brief Load function
@@ -76,4 +70,4 @@ class GAZEBO_VISIBLE ControlPlugin :
 };
 }
 
-#endif // _START_BUTTON_PLUGIN_H_
+#endif // _CONTROL_PLUGIN_H_
