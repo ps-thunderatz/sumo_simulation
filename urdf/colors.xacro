@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:if value="${'$(arg team_color)' == 'red'}">
+    <gazebo reference="base_link">
+      <material>Gazebo/Red</material>
+    </gazebo>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg team_color)' == 'blue'}">
+    <gazebo reference="base_link">
+      <material>Gazebo/Blue</material>
+    </gazebo>
+  </xacro:if>
+
+  <gazebo reference="right_wheel_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>

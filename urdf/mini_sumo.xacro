@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="mini_sumo"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Global argument used in .gazebo file to set sensor visual properties -->
+  <xacro:arg name="debug_sensors" default="false" />
+
+  <!-- Global argument used in .colors file to set model color -->
+  <xacro:arg name="team_color" default="blue" />
+
+  <!-- Import all Gazebo plugins -->
+  <!-- <xacro:include filename="$(find sumo_simulation)/urdf/mini_sumo.gazebo" /> -->
+
+  <!-- Code exported from SolidWorks -->
+  <xacro:include filename="$(find sumo_simulation)/urdf/mini_sumo.urdf" />
+
+  <!-- Definition of motor -->
+  <xacro:include filename="$(find sumo_simulation)/urdf/motor.xacro"/>
+
+  <xacro:include filename="$(find sumo_simulation)/urdf/colors.xacro"/>
+
+  <xacro:motor joint_name="left_wheel_joint" gear_rate="1"/>
+  <xacro:motor joint_name="right_wheel_joint" gear_rate="1"/>
+
+</robot>
