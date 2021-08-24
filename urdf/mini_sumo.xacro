@@ -9,18 +9,19 @@
   <!-- Global argument used in .colors file to set model color -->
   <xacro:arg name="team_color" default="blue" />
 
-  <!-- Import all Gazebo plugins -->
-  <!-- <xacro:include filename="$(find sumo_simulation)/urdf/mini_sumo.gazebo" /> -->
-
   <!-- Code exported from SolidWorks -->
   <xacro:include filename="$(find sumo_simulation)/urdf/mini_sumo.urdf" />
+
+  <!-- Import all Gazebo plugins -->
+  <xacro:include filename="$(find sumo_simulation)/urdf/mini_sumo.gazebo" />
+
+  <!-- Model materials and colors -->
+  <xacro:include filename="$(find sumo_simulation)/urdf/colors.xacro"/>
 
   <!-- Definition of motor -->
   <xacro:include filename="$(find sumo_simulation)/urdf/motor.xacro"/>
 
-  <xacro:include filename="$(find sumo_simulation)/urdf/colors.xacro"/>
-
-  <xacro:motor joint_name="left_wheel_joint" gear_rate="1"/>
-  <xacro:motor joint_name="right_wheel_joint" gear_rate="1"/>
+  <xacro:motor joint_name="left_wheel" gear_rate="1"/>
+  <xacro:motor joint_name="right_wheel" gear_rate="1"/>
 
 </robot>
