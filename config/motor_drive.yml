@@ -3,7 +3,7 @@
 
 robot_left_controller:
   type: velocity_controllers/JointVelocityController
-  joint: rodaesquerda_joint
+  joint: left_wheel_joint
   pid:
     p: 100.0
     i: 0.01
@@ -11,7 +11,7 @@ robot_left_controller:
 
 robot_right_controller:
   type: velocity_controllers/JointVelocityController
-  joint: rodadireita_joint
+  joint: right_wheel_joint
   pid:
     p: 100.0
     i: 0.01
