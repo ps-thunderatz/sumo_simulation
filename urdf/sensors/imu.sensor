@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="imu_sensor" params="link_reference topic_name robot_namespace:=blue_team">
+
+    <gazebo reference="${link_reference}">
+        <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+            <alwaysOn>true</alwaysOn>
+            <!-- <bodyName>${link_reference}</bodyName> -->
+            <topicName>${topic_name}</topicName>
+            <serviceName>imu_service</serviceName>
+            <gaussianNoise>0.0</gaussianNoise>
+            <updateRate>200.0</updateRate>
+        </plugin>
+    </gazebo>
+
+  </xacro:macro>
+</robot>
