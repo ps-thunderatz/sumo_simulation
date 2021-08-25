@@ -45,7 +45,5 @@
   <xacro:line_sensor link_reference="line5_link" topic_name="line_sensor_5/reading" visual="$(arg debug_sensors)" />
 
   <xacro:ultrasonic_sensor link_reference="sonar_link" topic_name="ultrasonic/reading" visual="$(arg debug_sensors)" /> -->
-
-  <xacro:imu_sensor />
-
+  <xacro:imu_sensor link_reference="imu_link" topic_name="imu" visual="$(arg debug_sensors)" />
 </robot>
