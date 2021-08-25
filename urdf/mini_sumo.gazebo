@@ -8,7 +8,8 @@
 
    <!-- <xacro:include filename="$(find sumo_simulation)/urdf/sensors/line.sensor" />
    <xacro:include filename="$(find sumo_simulation)/urdf/sensors/ultrasonic.sensor" /> -->
-   <xacro:include filename="$(find sumo_simulation)/urdf/sensors/imu.sensor" />
+  <xacro:include filename="$(find sumo_simulation)/urdf/sensors/imu.sensor"/>
+
 
   <!-- Body -->
   <gazebo reference="base_link">
@@ -45,16 +46,6 @@
 
   <xacro:ultrasonic_sensor link_reference="sonar_link" topic_name="ultrasonic/reading" visual="$(arg debug_sensors)" /> -->
 
-  <!-- <xacro:imu_sensor link_reference="imu_link" topic_name="imu" /> -->
+  <xacro:imu_sensor />
 
-  <gazebo>
-    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
-      <alwaysOn>true</alwaysOn>
-      <bodyName>base_link</bodyName>
-      <topicName>imu</topicName>
-      <serviceName>imu_service</serviceName>
-      <gaussianNoise>0.0</gaussianNoise>
-      <updateRate>200.0</updateRate>
-    </plugin>
-  </gazebo>
 </robot>
