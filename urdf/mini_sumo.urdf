@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mini_sumo">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.039576732621155 3.7251184446252E-06 -0.0144095999042188"
+        rpy="0 0 0" />
+      <mass
+        value="0.0297313079671725" />
+      <inertia
+        ixx="4.88803892671331E-05"
+        ixy="5.43691405910835E-21"
+        ixz="1.86566442421859E-23"
+        iyy="0.000107552977589956"
+        iyz="-4.42764590535738E-23"
+        izz="0.000156250479332308" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/base_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.56799050468715E-07 0.0177438799205313 1.31487906784855E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0293925354796172" />
+      <inertia
+        ixx="1.22579046710474E-05"
+        ixy="7.1575445445615E-11"
+        ixz="-7.24476321619482E-15"
+        iyy="2.03781664028303E-05"
+        iyz="-3.64436213658115E-11"
+        izz="1.22579046689118E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/left_wheel_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/left_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0755 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="-7.39889154111051E-08 -0.0177438799205308 -2.78855628213504E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0293925354796178" />
+      <inertia
+        ixx="1.22579046626619E-05"
+        ixy="-2.07746427302456E-11"
+        ixz="2.97682441936494E-16"
+        iyy="2.03781664028306E-05"
+        iyz="-7.75860567619646E-11"
+        izz="1.22579046772977E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/right_wheel_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/right_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.076 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+
+  <link
+    name="imu_link">
+    <!-- <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0293925354796178" />
+      <inertia
+        ixx="1.22579046626619E-05"
+        ixy="-2.07746427302456E-11"
+        ixz="2.97682441936494E-16"
+        iyy="2.03781664028306E-05"
+        iyz="-7.75860567619646E-11"
+        izz="1.22579046772977E-05" />
+    </inertial> -->
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.02 0.02" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.02 0.02" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+</robot>
