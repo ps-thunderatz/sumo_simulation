@@ -6,10 +6,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(CMAKE_AUTOMOC ON)
-
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5Core REQUIRED)
 find_package(gazebo REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
@@ -18,33 +14,24 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 
-find_package(roslaunch)
-
 catkin_package(
+#  INCLUDE_DIRS plugins/include
   CATKIN_DEPENDS gazebo_plugins gazebo_ros roscpp
 )
 
-include_directories(
-  ${GAZEBO_INCLUDE_DIRS}
-  ${Qt5Core_INCLUDE_DIRS}
-  ${catkin_INCLUDE_DIRS}
+include_directories(${catkin_INCLUDE_DIRS}
+                    ${Boost_INCLUDE_DIR}
+                    ${GAZEBO_INCLUDE_DIRS}
 )
-
-include_directories(plugins/include)
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
-add_library(control_plugin SHARED
-  ${headers_MOC}
-  plugins/src/control_plugin.cpp
-)
+# include_directories(plugins/include)
 
-target_link_libraries(control_plugin
-  ${GAZEBO_LIBRARIES}
-  ${Qt5Core_LIBRARIES}
-  ${Qt5Widgets_LIBRARIES}
-  ${catkin_LIBRARIES}
-)
+# add_library(line_sensor_plugin SHARED plugins/src/line_sensor_plugin.cpp)
+# target_link_libraries(line_sensor_plugin CameraPlugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+
+find_package(roslaunch)
 
 foreach(dir config launch urdf worlds)
 	install(DIRECTORY ${dir}/
