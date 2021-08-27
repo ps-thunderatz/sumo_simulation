@@ -18,4 +18,6 @@
     <arg name="world_name" value="$(find sumo_simulation)/worlds/$(arg world_name).world"/>
   </include>
 
+  <node name="starter" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find sumo_simulation)/config/rqt.perspective"/>
+
 </launch>
