@@ -136,6 +136,30 @@
       xyz="0 0 1" />
   </joint>
 
+  <link name="ds0_link"/>
+  <joint name="ds0_joint" type="fixed">
+    <origin xyz="25e-3 25e-3 20e-3" rpy="0 -0.08 0.4"/>
+    <parent link="base_link"/>
+    <child link="ds0_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <link name="ds1_link"/>
+  <joint name="ds1_joint" type="fixed">
+    <origin xyz="25e-3 0 20e-3" rpy="0 -0.08 0"/>
+    <parent link="base_link"/>
+    <child link="ds1_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <link name="ds2_link"/>
+  <joint name="ds2_joint" type="fixed">
+    <origin xyz="25e-3 -25e-3 20e-3" rpy="0 -0.08 -0.4"/>
+    <parent link="base_link"/>
+    <child link="ds2_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
 
   <!-- <link
     name="imu_link">
