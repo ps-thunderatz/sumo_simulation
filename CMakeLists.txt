@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 catkin_package(
-#  INCLUDE_DIRS plugins/include
+  INCLUDE_DIRS plugins/include
   CATKIN_DEPENDS gazebo_plugins gazebo_ros roscpp
 )
 
@@ -25,10 +25,10 @@ include_directories(${catkin_INCLUDE_DIRS}
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
-# include_directories(plugins/include)
+include_directories(plugins/include)
 
-# add_library(line_sensor_plugin SHARED plugins/src/line_sensor_plugin.cpp)
-# target_link_libraries(line_sensor_plugin CameraPlugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_library(line_sensor_plugin SHARED plugins/src/line_sensor_plugin.cpp)
+target_link_libraries(line_sensor_plugin CameraPlugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 find_package(roslaunch)
 
