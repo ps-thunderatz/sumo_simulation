@@ -48,5 +48,5 @@
   <xacro:distance_sensor link_reference="ds1_link" topic_name="ds1/reading" visual="$(arg debug_sensors)" />
   <xacro:distance_sensor link_reference="ds2_link" topic_name="ds2/reading" visual="$(arg debug_sensors)" />
 
-  <!-- <xacro:imu_sensor link_reference="imu_link" topic_name="imu" visual="$(arg debug_sensors)" /> -->
+  <xacro:imu_sensor link_reference="imu_link" topic_name="imu" visual="$(arg debug_sensors)" />
 </robot>

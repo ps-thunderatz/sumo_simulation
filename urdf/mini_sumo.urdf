@@ -179,14 +179,13 @@
   </joint>
 
 
-  <!-- <link
-    name="imu_link">
+  <link name="imu_link">
     <visual>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <box size="0.02 0.02 0.02" />
+        <box size="0.01 0.01 0.005" />
       </geometry>
       <material
         name="">
@@ -194,21 +193,13 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <box size="0.02 0.02 0.02" />
-      </geometry>
-    </collision>
   </link>
 
   <joint
     name="imu_joint"
     type="fixed">
     <origin
-      xyz="0 0 0"
+      xyz="-35e-3 0 30e-3"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -216,6 +207,6 @@
       link="imu_link" />
     <axis
       xyz="0 0 0" />
-  </joint> -->
+  </joint>
 
 </robot>

@@ -10,7 +10,7 @@
       <update_rate>100</update_rate>
       <visualize>${visual}</visualize>
       <topic>${topic_name}</topic>
-      
+
       <plugin filename="libgazebo_ros_imu_sensor.so" name="${link_reference}_sensor_plugin">
         <topicName>${topic_name}</topicName>
         <bodyName>${link_reference}</bodyName>
@@ -21,7 +21,7 @@
         <frameName>${link_reference}</frameName>
         <initialOrientationAsReference>false</initialOrientationAsReference>
       </plugin>
-      
+
       <pose>0 0 0 0 0 0</pose>
     </sensor>
   </gazebo>
