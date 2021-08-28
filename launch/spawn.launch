@@ -4,7 +4,7 @@
   <arg name="team" default="blue" />
   <arg name="x" default="0"/>
   <arg name="y" default="0"/>
-  <arg name="z" default="0.15"/>
+  <arg name="z" default="0.05"/>
   <arg name="row" default="0"/>
   <arg name="pitch" default="0"/>
   <arg name="yaw" default="0"/>
