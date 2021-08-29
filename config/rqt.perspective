@@ -223,7 +223,7 @@
             "plugin": {
               "keys": {
                 "publishers": {
-                  "repr": "\"[{'topic_name': '/ps/sumo/start', 'type_name': 'std_msgs/Bool', 'rate': 1.0, 'enabled': False, 'publisher_id': 0, 'counter': 0, 'expressions': {'/ps/sumo/start/data': 'False'}}]\"",
+                  "repr": "\"[{'topic_name': '/sumo/start', 'type_name': 'std_msgs/Bool', 'rate': 1.0, 'enabled': False, 'publisher_id': 0, 'counter': 0, 'expressions': {'/sumo/start/data': 'False'}}]\"",
                   "type": "repr"
                 }
               },
