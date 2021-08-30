@@ -44,9 +44,9 @@
   <xacro:line_sensor link_reference="line4_link" topic_name="line_sensor_4/reading" visual="$(arg debug_sensors)" />
   <xacro:line_sensor link_reference="line5_link" topic_name="line_sensor_5/reading" visual="$(arg debug_sensors)" /> -->
 
-  <xacro:distance_sensor link_reference="ds0_link" topic_name="ds0/reading" visual="$(arg debug_sensors)" />
-  <xacro:distance_sensor link_reference="ds1_link" topic_name="ds1/reading" visual="$(arg debug_sensors)" />
-  <xacro:distance_sensor link_reference="ds2_link" topic_name="ds2/reading" visual="$(arg debug_sensors)" />
+  <xacro:distance_sensor link_reference="distance_sensor_0_link" topic_name="distance_sensor_0/reading" visual="$(arg debug_sensors)" />
+  <xacro:distance_sensor link_reference="distance_sensor_1_link" topic_name="distance_sensor_1/reading" visual="$(arg debug_sensors)" />
+  <xacro:distance_sensor link_reference="distance_sensor_2_link" topic_name="distance_sensor_2/reading" visual="$(arg debug_sensors)" />
 
   <xacro:imu_sensor link_reference="imu_link" topic_name="imu" visual="$(arg debug_sensors)" />
 </robot>
