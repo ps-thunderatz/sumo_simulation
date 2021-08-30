@@ -1,10 +1,8 @@
 <launch>
 
-  <arg name="debug_sensors" default="false" />
   <arg name="z" default="0.05"/>
 
   <include file="$(find sumo_simulation)/launch/spawn.launch">
-    <arg name="debug_sensors" value="$(arg debug_sensors)"/>
     <arg name="team" value="blue"/>
     <arg name="x" value="-0.24"/>
     <arg name="y" value="0"/>
@@ -16,7 +14,6 @@
   </include>
 
   <include file="$(find sumo_simulation)/launch/spawn.launch">
-    <arg name="debug_sensors" value="$(arg debug_sensors)"/>
     <arg name="team" value="red"/>
     <arg name="x" value="0.24"/>
     <arg name="y" value="0"/>
