@@ -10,7 +10,6 @@
   <xacro:include filename="$(find sumo_simulation)/urdf/sensors/distance.sensor" />
   <xacro:include filename="$(find sumo_simulation)/urdf/sensors/imu.sensor"/>
 
-
   <!-- Body -->
   <gazebo reference="base_link">
     <mu1 value="0.1"/>

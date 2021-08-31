@@ -9,9 +9,6 @@
   <arg name="pitch" default="0"/>
   <arg name="yaw" default="0"/>
   <arg name="model" default="$(find sumo_simulation)/urdf/mini_sumo.xacro"/>
-
-  <!-- <node name="keyboard_controller" pkg="sumo_simulation" type="keyboard_node.py"/> -->
-
   <group ns="$(arg team)_team">
 
     <param name="robot_description" command="$(find xacro)/xacro $(arg model) debug_sensors:=$(arg debug_sensors) team_color:=$(arg team)" />
