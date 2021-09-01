@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="montagem_sumo_padrao">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.003 0 0.014"
+        rpy="-1.5708 0 -1.5708" />
+      <mass
+        value="0.384905526771832" />
+      <inertia
+        ixx="0.000217425279598283"
+        ixy="-8.85844261595288E-21"
+        ixz="1.98523347012727E-20"
+        iyy="0.000450640644807969"
+        iyz="-1.23657382148063E-05"
+        izz="0.0002920438460767" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/base_link_visual.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sumo_simulation/meshes/base_link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.051954" />
+      <inertia
+        ixx="7.1339E-06"
+        ixy="5.294E-23"
+        ixz="-7.7993E-40"
+        iyy="7.1339E-06"
+        iyz="-1.0071E-37"
+        izz="7.9555E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="17.5e-3" length="25e-3"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="17.5e-3" length="25e-3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0365 0.0375 0.0125"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.051954" />
+      <inertia
+        ixx="7.1339E-06"
+        ixy="3.0093E-36"
+        ixz="-4.1326E-38"
+        iyy="7.1339E-06"
+        iyz="3.6734E-38"
+        izz="7.9555E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="17.5e-3" length="25e-3"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="17.5e-3" length="25e-3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0365 -0.0375 0.0125"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link name="distance_sensor_0_link">
+    <visual>
+      <geometry>
+        <box size="5e-3 5e-3 5e-3"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="distance_sensor_0_joint" type="fixed">
+    <origin xyz="25e-3 25e-3 20e-3" rpy="0 -0.08 0.4"/>
+    <parent link="base_link"/>
+    <child link="distance_sensor_0_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <link name="distance_sensor_1_link">
+    <visual>
+      <geometry>
+        <box size="5e-3 5e-3 5e-3"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="distance_sensor_1_joint" type="fixed">
+    <origin xyz="25e-3 0 20e-3" rpy="0 -0.08 0"/>
+    <parent link="base_link"/>
+    <child link="distance_sensor_1_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <link name="distance_sensor_2_link">
+    <visual>
+      <geometry>
+        <box size="5e-3 5e-3 5e-3"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="distance_sensor_2_joint" type="fixed">
+    <origin xyz="25e-3 -25e-3 20e-3" rpy="0 -0.08 -0.4"/>
+    <parent link="base_link"/>
+    <child link="distance_sensor_2_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+
+  <link name="imu_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.01 0.005" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="-35e-3 0 30e-3"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+</robot>
