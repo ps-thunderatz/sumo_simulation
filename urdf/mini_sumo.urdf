@@ -179,6 +179,35 @@
   </joint>
 
 
+  <link name="left_line_sensor_link">
+    <visual>
+      <geometry>
+        <box size="1e-3 1e-3 1e-3"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_line_sensor_joint" type="fixed">
+    <origin xyz="40e-3 42.5e-3 2e-3" rpy="0 1.5708 0"/>
+    <parent link="base_link"/>
+    <child link="left_line_sensor_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <link name="right_line_sensor_link">
+    <visual>
+      <geometry>
+        <box size="1e-3 1e-3 1e-3"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_line_sensor_joint" type="fixed">
+    <origin xyz="40e-3 -42.5e-3 2e-3" rpy="0 1.5708 0"/>
+    <parent link="base_link"/>
+    <child link="right_line_sensor_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+
   <link name="imu_link">
     <visual>
       <origin

@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="z" default="0.05"/>
+
+  <include file="$(find sumo_simulation)/launch/spawn.launch">
+    <arg name="team" value="blue"/>
+    <arg name="x" value="0.187786"/>
+    <arg name="y" value="-0.251572"/>
+    <arg name="z" value="0.03344"/>
+    <arg name="row" value="0"/>
+    <arg name="pitch" value="0"/>
+    <arg name="yaw" value="0"/>
+    <arg name="model" value="$(find sumo_simulation)/urdf/mini_sumo.xacro"/>
+  </include>
+
+  <node name="starter" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find sumo_simulation)/config/calibration.perspective"/>
+</launch>
