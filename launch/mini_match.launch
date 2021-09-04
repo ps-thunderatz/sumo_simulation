@@ -5,6 +5,7 @@
   <arg name="use_sim_time" default="true"/>
   <arg name="recording" default="false"/>
   <arg name="world_name" default="dohyo_mini"/>
+  <arg name="z" default="0.05"/>
 
   <include file="$(find sumo_simulation)/launch/gazebo.launch">
     <arg name="debug" value="$(arg debug)"/>
@@ -15,5 +16,7 @@
     <arg name="world_name" value="$(find sumo_simulation)/worlds/$(arg world_name).world"/>
   </include>
 
-  <include file="$(find sumo_simulation)/launch/robots.launch"\>
+  <include file="$(find sumo_simulation)/launch/robots.launch">
+    <arg name="z" value="$(arg z)"/>
+  </include>
 </launch>
