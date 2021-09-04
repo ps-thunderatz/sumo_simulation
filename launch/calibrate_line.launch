@@ -1,5 +1,4 @@
 <launch>
-
   <arg name="z" default="0.05"/>
 
   <include file="$(find sumo_simulation)/launch/spawn.launch">

@@ -1,5 +1,4 @@
 <launch>
-
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="paused" default="true"/>
@@ -9,9 +8,9 @@
 
   <!-- Load world model -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="debug" value="$(arg debug)" />
-    <arg name="gui" value="$(arg gui)" />
-    <arg name="verbose" value="true" />
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="verbose" value="true"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="recording" value="$(arg recording)"/>
@@ -19,5 +18,4 @@
   </include>
 
   <node name="starter" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find sumo_simulation)/config/rqt.perspective"/>
-
 </launch>
