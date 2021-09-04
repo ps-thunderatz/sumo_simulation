@@ -13,7 +13,7 @@
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="recording" value="$(arg recording)"/>
-    <arg name="world_name" value="$(find sumo_simulation)/worlds/$(arg world_name).world"/>
+    <arg name="world_name" value="$(arg world_name)"/>
   </include>
 
   <include file="$(find sumo_simulation)/launch/robots.launch">
