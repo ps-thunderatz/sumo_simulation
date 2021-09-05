@@ -18,32 +18,34 @@
 #include <gazebo/plugins/CameraPlugin.hh>
 #include <gazebo/common/Image.hh>
 #include <ros/ros.h>
+#include <string>
+#include <memory>
 
 /*****************************************
  * Class Definition
  *****************************************/
 
 namespace gazebo {
-    class LineSensorPlugin : public CameraPlugin {
-        public:
-            LineSensorPlugin();
+class LineSensorPlugin :
+    public CameraPlugin {
+    public:
+        LineSensorPlugin();
 
-            void Load(sensors::SensorPtr _parent, sdf::ElementPtr _sdf);
+        void Load(sensors::SensorPtr _parent, sdf::ElementPtr _sdf);
 
-            void OnNewFrame(const unsigned char* _image,
-                            unsigned int _width, unsigned int _height,
-                            unsigned int _depth, const std::string& _format);
+        void OnNewFrame(const unsigned char* _image, unsigned int _width, unsigned int _height, unsigned int _depth,
+                        const std::string& _format);
 
-        private:
-            common::Image render;
+    private:
+        common::Image render;
 
-            std::unique_ptr<ros::NodeHandle> ros_node;
-            ros::Publisher brightness_pub;
+        std::unique_ptr<ros::NodeHandle> ros_node;
+        ros::Publisher brightness_pub;
 
-            std::string brightness_topic;
+        std::string brightness_topic;
 
-            int adc_resolution;
-    };
+        int adc_resolution;
+};
 }
 
 #endif // __LINE_SENSOR_PLUGIN_H__
