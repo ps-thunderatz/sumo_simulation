@@ -12,5 +12,5 @@
     <arg name="model" value="$(find sumo_simulation)/urdf/mini_sumo.xacro"/>
   </include>
 
-  <node name="starter" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find sumo_simulation)/config/calibration.perspective"/>
+  <node name="calibrate" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find sumo_simulation)/config/calibration.perspective"/>
 </launch>
