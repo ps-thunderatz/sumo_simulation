@@ -1,0 +1,25 @@
+<launch>
+  <arg name="z" default="0.05"/>
+
+  <include file="$(find sumo_simulation)/launch/spawn.launch">
+    <arg name="team" value="blue"/>
+    <arg name="x" value="-0.11"/>
+    <arg name="y" value="0"/>
+    <arg name="z" value="$(arg z)"/>
+    <arg name="row" value="0"/>
+    <arg name="pitch" value="0"/>
+    <arg name="yaw" value="3.14159265359"/>
+    <arg name="model" value="$(find sumo_simulation)/urdf/mini_sumo.xacro"/>
+  </include>
+
+  <include file="$(find sumo_simulation)/launch/spawn.launch">
+    <arg name="team" value="red"/>
+    <arg name="x" value="0.11"/>
+    <arg name="y" value="0"/>
+    <arg name="z" value="$(arg z)"/>
+    <arg name="row" value="0"/>
+    <arg name="pitch" value="0"/>
+    <arg name="yaw" value="0"/>
+    <arg name="model" value="$(find sumo_simulation)/urdf/mini_sumo.xacro"/>
+  </include>
+</launch>
