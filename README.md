@@ -83,6 +83,12 @@ roslaunch sumo_simulation spawn.launch team=:red_team
 roslaunch sumo_simulation robots.launch
 ```
 
+- **calibrate_line.launch** - Arquivo para iniciar a calibração.
+
+```ros
+roslaunch sumo_simulation calibrate_line.launch
+```
+
 ## :joystick: Controle
 
 Para controlar os sumôs, inicie o [pacote de controle](https://github.com/ps-thunderatz/sumo_controller/) de acordo com o ensinado durante as aulas e no README dele!
