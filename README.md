@@ -43,7 +43,7 @@ Esse repositório contém a simulação do robô de sumô que você irá control
 
 ### :woman_cartwheeling: Compilando
 
-Antes de iniciar a simulação, é necessário se certificar que você está dentro de uma workspace válida. É possível compilar o código com o seguinte comando:
+Antes de iniciar a simulação, é necessário se certificar que você está dentro da raíz de uma workspace válida. É possível compilar o código com o seguinte comando:
 
 ```ros
 catkin_make
@@ -59,7 +59,7 @@ Esse pacote de simulação possui diversos modos de inicialização que serão d
 roslaunch sumo_simulation mini_match.launch
 ```
 
-- **tiebreaker.launch** - Arquivo que abre a partida em posição de desempate.
+- **tiebreaker.launch** - Arquivo que invoca apenas os dois sumôs em posição de desempate.
 
 ```ros
 roslaunch sumo_simulation tiebreaker.launch
@@ -71,10 +71,10 @@ roslaunch sumo_simulation tiebreaker.launch
 roslaunch sumo_simulation gazebo.launch
 ```
 
-- **spawn.launch** - Arquivo que invoca apenas um dos robôs. Para especificar a cor do time é necessário adicionar ```team:="cor_do_time"``` no final do comando.
+- **spawn.launch** - Arquivo que invoca apenas um dos robôs. Para especificar a cor do time é necessário adicionar ```team:=cor_do_time``` no final do comando.
 
 ```ros
-roslaunch sumo_simulation spawn.launch team=:"red_team"
+roslaunch sumo_simulation spawn.launch team=:red_team
 ```
 
 - **robots.launch** - Arquivo que invoca apenas os dois sumôs em posição para lutar.
