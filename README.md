@@ -21,6 +21,7 @@
   - [:woman_cartwheeling: Compilando](#woman_cartwheeling-compilando)
   - [:rocket: Iniciando a simulação](#rocket-iniciando-a-simulação)
 - [:joystick: Controle](#joystick-controle)
+- [:pushpin: Tópicos](#pushpin-tópicos)
 
 
 ## 🎈 Introdução
@@ -28,6 +29,11 @@
 Esse repositório contém a simulação do robô de sumô que você irá controlar! Lembre-se de baixar (ou clonar) no mesmo workspace catkin que está o repositório do [pacote de controle](https://github.com/ps-thunderatz/sumo_controller/). 
 
 ## :camera: Capturas de tela
+<p align="center">
+  <img height=200px src="./docs/sumo_1.jpg" />
+  <img height=200px src="./docs/sumo_2.jpg" />
+
+</p>
 
 ## 📂 Arquivos no projeto
 - **config/** - Variáveis de configuração que serão utilizadas na simulação, contidas em arquivos .yml ou .perspective.
@@ -92,3 +98,11 @@ roslaunch sumo_simulation calibrate_line.launch
 ## :joystick: Controle
 
 Para controlar os sumôs, inicie o [pacote de controle](https://github.com/ps-thunderatz/sumo_controller/) de acordo com o ensinado durante as aulas e no README dele!
+
+## :pushpin: Tópicos
+
+Para controlar algumas partes da simulação, o ROS funciona se **inscrevendo** e **escrevendo** em tópicos. Para ter acesso aos tópicos que estão sendo publicados na simulação, basta abrir um novo terminal e utilizar o seguinte comando:
+
+```ros
+rostopic list
+```
