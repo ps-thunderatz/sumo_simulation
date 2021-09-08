@@ -103,7 +103,7 @@ Para controlar os sumôs, inicie o [pacote de controle](https://github.com/ps-th
 
 ## :pushpin: Tópicos
 
-Para controlar algumas partes da simulação, o ROS funciona se **inscrevendo** e **publicando** em tópicos. Para ter acesso aos tópicos em que a simulação está publicando, basta abrir um novo terminal e utilizar o seguinte comando:
+Para controlar algumas partes da simulação, o ROS funciona se **inscrevendo** e **publicando** em tópicos. Para listar os tópicos que a simulação está publicando, basta abrir um novo terminal e utilizar o seguinte comando:
 
 ```bash
 rostopic list
@@ -111,7 +111,7 @@ rostopic list
 
 ### :arrow_left: Entrada
 
-Para controlar a velocidade do robô é necessário se inscrever nos tópicos do ROS de cada roda. A simulação recebe mensagens do tipo[std_msgs/Float64](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Float64.html). Os tópicos que controlam as rodas são:
+Para controlar a velocidade do robô é necessário publicar nos tópicos do ROS de cada roda. A simulação recebe mensagens do tipo[std_msgs/Float64](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Float64.html). Os tópicos que controlam as rodas são:
 
 - **robot_left_controller/command**
 - **robot_right_controller/command**
@@ -122,7 +122,7 @@ O controle do robô é feito pelo [sumo_controller](https://github.com/ps-thunde
 
 O pacote de simulação publica alguns tópicos que serão importantes no desenvolvimento de estratégias no [sumo_controller](https://github.com/ps-thunderatz/sumo_controller). Os tópicos publicados são:
 
-- **distance_sensor_[0..2]/reading** - Tópico que realiza a leitura dos dados dos sensores de distância.
-- **imu/** - Tópico que realiza a leitura dos dados da IMU. A partir dessa leitura é possível, no pacote de controle, receber a velocidade angular e a aceleração linear do robô.
-- **left_line_sensor/reading** - Tópico que realiza a leitura do sensor de linha no lado esquerdo do robô.
-- **right_line_sensor/reading** - Tópico que realiza a leitura do sensor de linha no lado direito do robô.
+- **distance_sensor_[0..2]/reading** - Tópico da leitura dos dados dos sensores de distância.
+- **imu/** - Tópico da leitura dos dados da IMU. A partir dessa leitura é possível, no pacote de controle, receber a velocidade angular e a aceleração linear do robô.
+- **left_line_sensor/reading** - Tópico da leitura do sensor de linha no lado esquerdo do robô.
+- **right_line_sensor/reading** - Tópico da leitura do sensor de linha no lado direito do robô.
