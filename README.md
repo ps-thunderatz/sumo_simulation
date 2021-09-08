@@ -82,7 +82,7 @@ roslaunch sumo_simulation gazebo.launch
 - **spawn.launch** - Arquivo que invoca apenas um dos robôs. Para especificar a cor do time é necessário adicionar ```team:=cor_do_time``` no final do comando.
 
 ```bash
-roslaunch sumo_simulation spawn.launch team=:red
+roslaunch sumo_simulation spawn.launch team:=red
 ```
 
 - **robots.launch** - Arquivo que invoca apenas os dois sumôs em posição para lutar.
